@@ -1,0 +1,575 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: CONSECUTIVO: -->
+		<div class="form-group natural-VcrCodForm" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CONSECUTIVO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrCodForm)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO SOLICITUD: -->
+		<div class="form-group natural-VcrIdSol" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO SOLICITUD:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdSol<%%RND1%%>"><%%COMBOTEXT(VcrIdSol)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: FECHA VERIFICACI&#211;N: -->
+		<div class="form-group natural-VcrFecVis" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FECHA VERIFICACI&#211;N:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrFecVis)%%></div>
+			</div>
+		</div>
+		<!-- Field: NOMBRE PERSONA ATIENDE VISITA: -->
+		<div class="form-group natural-VcrNomAti" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NOMBRE PERSONA ATIENDE VISITA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrNomAti)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO IDENTIFICACI&#211;N: -->
+		<div class="form-group natural-VcrIdTip" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO IDENTIFICACI&#211;N:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdTip<%%RND1%%>"><%%COMBOTEXT(VcrIdTip)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: N&#218;MERO IDENTIFICACI&#211;N: -->
+		<div class="form-group natural-VcrNoIde" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">N&#218;MERO IDENTIFICACI&#211;N:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrNoIde)%%></div>
+			</div>
+		</div>
+		<!-- Field: CELULAR: -->
+		<div class="form-group natural-VcrCel" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CELULAR:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrCel)%%></div>
+			</div>
+		</div>
+		<!-- Field: CORREO ELECTR&#211;NICO: -->
+		<div class="form-group natural-VcrCorEle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CORREO ELECTR&#211;NICO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrCorEle)%%></div>
+			</div>
+		</div>
+		<!-- Field: MOTIVO VISITA: -->
+		<div class="form-group natural-VcrIdMot" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">MOTIVO VISITA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdMot<%%RND1%%>"><%%COMBOTEXT(VcrIdMot)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: No. RADICADO SOLICITUD: -->
+		<div class="form-group natural-VcrRadSol" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">No. RADICADO SOLICITUD:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrRadSol)%%></div>
+			</div>
+		</div>
+		<!-- Field: FECHA RADICACION: -->
+		<div class="form-group natural-VcrFecSol" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FECHA RADICACION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrFecSol)%%></div>
+			</div>
+		</div>
+		<!-- Field: OBSERVACIONES DATOS: -->
+		<div class="form-group natural-VcrObsDat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OBSERVACIONES DATOS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrObsDat)%%></div>
+			</div>
+		</div>
+		<!-- Field: UBICACION: -->
+		<div class="form-group natural-VcrIdUbi" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">UBICACION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdUbi<%%RND1%%>"><%%COMBOTEXT(VcrIdUbi)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: DIRECCION: -->
+		<div class="form-group natural-VcrDir" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DIRECCION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrDir)%%></div>
+			</div>
+		</div>
+		<!-- Field: BARRIO: -->
+		<div class="form-group natural-VcrIdBarVe" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">BARRIO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdBarVe<%%RND1%%>"><%%COMBOTEXT(VcrIdBarVe)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: VEREDA/CORREGIMIENTO: -->
+		<div class="form-group natural-VcrIdCorr" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">VEREDA/CORREGIMIENTO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdCorr<%%RND1%%>"><%%COMBOTEXT(VcrIdCorr)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: COMUNA/LOCALIDAD: -->
+		<div class="form-group natural-VcrIdCom" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">COMUNA/LOCALIDAD:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdCom<%%RND1%%>"><%%COMBOTEXT(VcrIdCom)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: LATITUD: -->
+		<div class="form-group natural-VcrLat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LATITUD:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrLat)%%></div>
+			</div>
+		</div>
+		<!-- Field: LONGITUD: -->
+		<div class="form-group natural-VcrLon" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LONGITUD:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrLon)%%></div>
+			</div>
+		</div>
+		<!-- Field: OBSERVACIONES UBICACION: -->
+		<div class="form-group natural-VcrObsUbi" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OBSERVACIONES UBICACION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrObsUbi)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO DE FEN&#211;MENO: -->
+		<div class="form-group natural-VcrIdFen" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO DE FEN&#211;MENO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdFen<%%RND1%%>"><%%COMBOTEXT(VcrIdFen)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: DETONANTE -->
+		<div class="form-group natural-VcrDet" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DETONANTE</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrDet)%%></div>
+			</div>
+		</div>
+		<!-- Field: CARACTER&#205;STICAS DEL EVENTO: -->
+		<div class="form-group natural-VcrIdCar" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CARACTER&#205;STICAS DEL EVENTO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdCar<%%RND1%%>"><%%COMBOTEXT(VcrIdCar)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: OTRAS CARACTERISTICAS DEL EVENTO: -->
+		<div class="form-group natural-VcrOtr" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OTRAS CARACTERISTICAS DEL EVENTO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrOtr)%%></div>
+			</div>
+		</div>
+		<!-- Field: DESCRIPCI&#211;N EVENTO: -->
+		<div class="form-group natural-VcrDesEve" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DESCRIPCI&#211;N EVENTO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrDesEve)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO DE EDIFICACI&#211;N: -->
+		<div class="form-group natural-VcrIdEdi" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO DE EDIFICACI&#211;N:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdEdi<%%RND1%%>"><%%COMBOTEXT(VcrIdEdi)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: N&#218;MERO DE PISOS: -->
+		<div class="form-group natural-VcrNoPis" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">N&#218;MERO DE PISOS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrNoPis)%%></div>
+			</div>
+		</div>
+		<!-- Field: OBRA CIVIL: -->
+		<div class="form-group natural-VcrObrCiv" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OBRA CIVIL:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrObrCiv)%%></div>
+			</div>
+		</div>
+		<!-- Field: ESTADO VISUAL: -->
+		<div class="form-group natural-VcrEstEdi" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ESTADO VISUAL:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrEstEdi)%%></div>
+			</div>
+		</div>
+		<!-- Field: AFECTACI&#211;N: -->
+		<div class="form-group natural-VcrIdAfe" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AFECTACI&#211;N:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdAfe<%%RND1%%>"><%%COMBOTEXT(VcrIdAfe)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: OBSERVACIONES AFECTACION: -->
+		<div class="form-group natural-VcrObsEst" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OBSERVACIONES AFECTACION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrObsEst)%%></div>
+			</div>
+		</div>
+		<!-- Field: DA&#209;OS GRAVES: -->
+		<div class="form-group natural-VcrDanGrav" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DA&#209;OS GRAVES:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrDanGrav)%%></div>
+			</div>
+		</div>
+		<!-- Field: A&#209;OS DE CONSTRUCCION: -->
+		<div class="form-group natural-VcrAnoCon" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">A&#209;OS DE CONSTRUCCION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAnoCon)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO DE MATERIAL: -->
+		<div class="form-group natural-VcrIdMat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO DE MATERIAL:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdMat<%%RND1%%>"><%%COMBOTEXT(VcrIdMat)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: LESIONES EN LA ESTRUCTURA: -->
+		<div class="form-group natural-VcrIdLes" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LESIONES EN LA ESTRUCTURA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdLes<%%RND1%%>"><%%COMBOTEXT(VcrIdLes)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: AYUDA HUMANITARIA: -->
+		<div class="form-group natural-VcrAyuHum" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AYUDA HUMANITARIA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrAyuHum)%%></div>
+			</div>
+		</div>
+		<!-- Field: CONSECUTIVO AYUDA: -->
+		<div class="form-group natural-VcrConAyu" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CONSECUTIVO AYUDA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrConAyu)%%></div>
+			</div>
+		</div>
+		<!-- Field: OBSERVACIONES AYUDA -->
+		<div class="form-group natural-VcrObs" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OBSERVACIONES AYUDA</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrObs)%%></div>
+			</div>
+		</div>
+		<!-- Field: CAPACIDAD REDUCIDA: -->
+		<div class="form-group natural-VcrCapRed" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAPACIDAD REDUCIDA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrCapRed)%%></div>
+			</div>
+		</div>
+		<!-- Field: TIPO CAPACIDAD REDUCIDA: -->
+		<div class="form-group natural-VcrIdCap" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TIPO CAPACIDAD REDUCIDA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdCap<%%RND1%%>"><%%COMBOTEXT(VcrIdCap)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: OTRA CAPACIDAD REDUCIDA: -->
+		<div class="form-group natural-VcrOtrCap" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OTRA CAPACIDAD REDUCIDA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrOtrCap)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL PRIMERA INFANCIA - FEMENINO: -->
+		<div class="form-group natural-VcrInf0a5F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL PRIMERA INFANCIA - FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrInf0a5F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL PRIMERA INFANCIA MASCULINO: -->
+		<div class="form-group natural-VcrInf0a5M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL PRIMERA INFANCIA MASCULINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrInf0a5M)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL NI&#209;AS FEMENINO: -->
+		<div class="form-group natural-VcrInf5a12F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL NI&#209;AS FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrInf5a12F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL NI&#209;OS: -->
+		<div class="form-group natural-VcrInf5a12M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL NI&#209;OS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrInf5a12M)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADOLESCENTES FEMENINO: -->
+		<div class="form-group natural-VcrAd12a18F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADOLESCENTES FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd12a18F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADOLESCENTES MASCULINO: -->
+		<div class="form-group natural-VcrAd12a18M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADOLESCENTES MASCULINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd12a18M)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL JOVEN ADULTO FEMENINO: -->
+		<div class="form-group natural-VcrAd18a28F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL JOVEN ADULTO FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd18a28F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL JOVEN ADULTO MASCULINO: -->
+		<div class="form-group natural-VcrAd18a28M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL JOVEN ADULTO MASCULINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd18a28M)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADULTO FEMENINO: -->
+		<div class="form-group natural-VcrAd28a60F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADULTO FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd28a60F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADULTO MASCULINO: -->
+		<div class="form-group natural-VcrAd28a60M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADULTO MASCULINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAd28a60M)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADULTO MAYOR FEMENINO: -->
+		<div class="form-group natural-VcrAdMay60F" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADULTO MAYOR FEMENINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAdMay60F)%%></div>
+			</div>
+		</div>
+		<!-- Field: CICLO VITAL ADULTO MAYOR MASCULINO: -->
+		<div class="form-group natural-VcrAdMay60M" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CICLO VITAL ADULTO MAYOR MASCULINO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAdMay60M)%%></div>
+			</div>
+		</div>
+		<!-- Field: AFROCOLOMBIANAS: -->
+		<div class="form-group natural-VcrAfr" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AFROCOLOMBIANAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrAfr)%%></div>
+			</div>
+		</div>
+		<!-- Field: PALENQUERAS: -->
+		<div class="form-group natural-VcrPal" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PALENQUERAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrPal)%%></div>
+			</div>
+		</div>
+		<!-- Field: IND&#205;GENAS: -->
+		<div class="form-group natural-VcrInd" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IND&#205;GENAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrInd)%%></div>
+			</div>
+		</div>
+		<!-- Field: CAUCACICAS: -->
+		<div class="form-group natural-VcrCau" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CAUCACICAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrCau)%%></div>
+			</div>
+		</div>
+		<!-- Field: GITANAS: -->
+		<div class="form-group natural-VcrGit" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">GITANAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrGit)%%></div>
+			</div>
+		</div>
+		<!-- Field: MESTIZAS: -->
+		<div class="form-group natural-VcrMes" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">MESTIZAS:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrMes)%%></div>
+			</div>
+		</div>
+		<!-- Field: OTROS PERTENENCIA ETNICA: -->
+		<div class="form-group natural-VcrOtrPer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">OTROS PERTENENCIA ETNICA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(VcrOtrPer)%%></div>
+			</div>
+		</div>
+		<!-- Field: PERTENENCIA ETNICA NS/NR: -->
+		<div class="form-group natural-VcrPerNsNr" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PERTENENCIA ETNICA NS/NR:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrPerNsNr)%%></div>
+			</div>
+		</div>
+		<!-- Field: TRASLADO CASO: -->
+		<div class="form-group natural-VcrTraCas" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TRASLADO CASO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrTraCas)%%></div>
+			</div>
+		</div>
+		<!-- Field: ORGANISMO O ENTIDAD 1: -->
+		<div class="form-group natural-VcrIdTra1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ORGANISMO O ENTIDAD 1:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdTra1<%%RND1%%>"><%%COMBOTEXT(VcrIdTra1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: ORGANISMO O ENTIDAD 2: -->
+		<div class="form-group natural-VcrdTra2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ORGANISMO O ENTIDAD 2:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrdTra2<%%RND1%%>"><%%COMBOTEXT(VcrdTra2)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: ORGANISMO O ENTIDAD 3: -->
+		<div class="form-group natural-VcrIdTra3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ORGANISMO O ENTIDAD 3:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdTra3<%%RND1%%>"><%%COMBOTEXT(VcrIdTra3)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: ORGANISMO O ENTIDAD 4: -->
+		<div class="form-group natural-VcrIdTra4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ORGANISMO O ENTIDAD 4:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdTra4<%%RND1%%>"><%%COMBOTEXT(VcrIdTra4)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: RECOMENDACION LINEA EMERGENCIA: -->
+		<div class="form-group natural-VcrRecLin" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RECOMENDACION LINEA EMERGENCIA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrRecLin)%%></div>
+			</div>
+		</div>
+		<!-- Field: RECOMENDACION LEY 1523: -->
+		<div class="form-group natural-VcrRecLey" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RECOMENDACION LEY 1523:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrRecLey)%%></div>
+			</div>
+		</div>
+		<!-- Field: RECOMENDACION PRINCIPIO PRECAUCION: -->
+		<div class="form-group natural-VcrRecPre" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RECOMENDACION PRINCIPIO PRECAUCION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrRecPre)%%></div>
+			</div>
+		</div>
+		<!-- Field: RECOMENDACIONES PRINCIPIO AUTOCONSERVACION: -->
+		<div class="form-group natural-VcrRecAut" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">RECOMENDACIONES PRINCIPIO AUTOCONSERVACION:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrRecAut)%%></div>
+			</div>
+		</div>
+		<!-- Field: DATOS PERSONALES: -->
+		<div class="form-group natural-VcrDatPer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DATOS PERSONALES:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrDatPer)%%></div>
+			</div>
+		</div>
+		<!-- Field: USO DE IMAGENES: -->
+		<div class="form-group natural-VcrUsoIma" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">USO DE IMAGENES:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrUsoIma)%%></div>
+			</div>
+		</div>
+		<!-- Field: USO DATOS PERSONALES: -->
+		<div class="form-group natural-VcrUsoDat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">USO DATOS PERSONALES:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrUsoDat)%%></div>
+			</div>
+		</div>
+		<!-- Field: AUTORIZACION CORREO ELECTR&#211;NICO: -->
+		<div class="form-group natural-VcrAutCor" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AUTORIZACION CORREO ELECTR&#211;NICO:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(VcrAutCor)%%></div>
+			</div>
+		</div>
+		<!-- Field: FUNCIONARIO / CONTRATISTA: -->
+		<div class="form-group natural-VcrIdSerP" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FUNCIONARIO / CONTRATISTA:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="VcrIdSerP<%%RND1%%>"><%%COMBOTEXT(VcrIdSerP)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: FOTO -->
+		<div class="form-group natural-VcrIma" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FOTO</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="VcrIma-link" href="link.php?t=natural&f=VcrIma&i=<%%VALUE(VcrId)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(VcrIma)%%>"></i></a><script>jQuery(function() { var e_VcrIma = '<%%VALUE(VcrIma)%%>'; if(e_VcrIma == '' || e_VcrIma == '&nbsp;' || e_VcrIma == 'blank.gif') jQuery('#VcrIma-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: VIDEO -->
+		<div class="form-group natural-VcrVideo" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">VIDEO</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="VcrVideo-link" href="link.php?t=natural&f=VcrVideo&i=<%%VALUE(VcrId)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-film" title="<%%VALUE(VcrVideo)%%>"></i></a><script>jQuery(function() { var e_VcrVideo = '<%%VALUE(VcrVideo)%%>'; if(e_VcrVideo == '' || e_VcrVideo == '&nbsp;' || e_VcrVideo == 'blank.gif') jQuery('#VcrVideo-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: DOCUMENTO -->
+		<div class="form-group natural-VcrDoc" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DOCUMENTO</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="VcrDoc-link" href="link.php?t=natural&f=VcrDoc&i=<%%VALUE(VcrId)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(VcrDoc)%%>"></i></a><script>jQuery(function() { var e_VcrDoc = '<%%VALUE(VcrDoc)%%>'; if(e_VcrDoc == '' || e_VcrDoc == '&nbsp;' || e_VcrDoc == 'blank.gif') jQuery('#VcrDoc-link').hide(); });</script></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

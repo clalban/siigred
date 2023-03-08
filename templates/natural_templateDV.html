@@ -1,0 +1,1014 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/natural-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="natural_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="natural_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="natural_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: CONSECUTIVO: -->
+				<div class="form-group natural-VcrCodForm">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">CONSECUTIVO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrCodForm-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrCodForm-description"><div class="alert alert-info bspacer-xs">N&#250;mero del consecutivo asignado en el registro de la Visita de Verificaci&#243;n de Condiciones de Riesgo de Origen Natural, Socio Natural y Tecnol&#243;gico</div></span>
+						<div class="form-control-static" id="VcrCodForm"><%%VALUE(VcrCodForm)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: TIPO SOLICITUD: -->
+				<div class="form-group natural-VcrIdSol">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdSol" data-parent_link="view_parent_modal">TIPO SOLICITUD:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdSol-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdSol-description"><div class="alert alert-info bspacer-xs">Seleccionar el tipo de solicitud relacionado con la visita de verificaci&#243;n que se esta realizando</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdSol)%%><%%PLINK(VcrIdSol)%%><%%ADDNEW(solicitudes)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: FECHA VERIFICACI&#211;N: -->
+				<div class="form-group natural-VcrFecVis">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrFecVis-dd">FECHA VERIFICACI&#211;N: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrFecVis-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrFecVis-description"><div class="alert alert-info bspacer-xs">Registrar la fecha en que se realiza la visita y verificaci&#243;n de las condiciones de riesgo</div></span>
+						<%%COMBO(VcrFecVis)%%>
+					</div>
+				</div>
+
+				<!-- Field: NOMBRE PERSONA ATIENDE VISITA: -->
+				<div class="form-group natural-VcrNomAti">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrNomAti">NOMBRE PERSONA ATIENDE VISITA:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrNomAti-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrNomAti-description"><div class="alert alert-info bspacer-xs">Registrar los nombres y apellidos de la persona que atiende la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico.</div></span>
+						<input maxlength="50" type="text" class="form-control" name="VcrNomAti" id="VcrNomAti" value="<%%VALUE(VcrNomAti)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: TIPO IDENTIFICACI&#211;N: -->
+				<div class="form-group natural-VcrIdTip">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdTip" data-parent_link="view_parent_modal">TIPO IDENTIFICACI&#211;N:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdTip-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdTip-description"><div class="alert alert-info bspacer-xs">Seleccionar el tipo de identificaci&#243;n de la persona que atiende la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdTip)%%><%%PLINK(VcrIdTip)%%><%%ADDNEW(tipo_documento)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: N&#218;MERO IDENTIFICACI&#211;N: -->
+				<div class="form-group natural-VcrNoIde">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrNoIde">N&#218;MERO IDENTIFICACI&#211;N:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrNoIde-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrNoIde-description"><div class="alert alert-info bspacer-xs">Registrar la identificaci&#243;n de la persona que atiende la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico, especificando en el campo</div></span>
+						<input maxlength="10" type="text" class="form-control" name="VcrNoIde" id="VcrNoIde" value="<%%VALUE(VcrNoIde)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: CELULAR: -->
+				<div class="form-group natural-VcrCel">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrCel">CELULAR: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrCel-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrCel-description"><div class="alert alert-info bspacer-xs">Registrar No. De Celular y/o telefono fijo de la persona que atiende la visita de verificaci&#243;n de condiciones de riesgo de origen natural, <br>socio natural y tecnol&#243;gico.</div></span>
+						<input type="text" class="form-control" name="VcrCel" id="VcrCel" value="<%%VALUE(VcrCel)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CORREO ELECTR&#211;NICO: -->
+				<div class="form-group natural-VcrCorEle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrCorEle">CORREO ELECTR&#211;NICO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrCorEle-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrCorEle-description"><div class="alert alert-info bspacer-xs">Registrar el correo electr&#243;nico de la persona que atiende la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="VcrCorEle" id="VcrCorEle" value="<%%VALUE(VcrCorEle)%%>">
+					</div>
+				</div>
+
+				<!-- Field: MOTIVO VISITA: -->
+				<div class="form-group natural-VcrIdMot">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdMot" data-parent_link="view_parent_modal">MOTIVO VISITA:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdMot-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdMot-description"><div class="alert alert-info bspacer-xs">Seleccionar el motivo de la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdMot)%%><%%PLINK(VcrIdMot)%%><%%ADDNEW(motivo_visita)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: No. RADICADO SOLICITUD: -->
+				<div class="form-group natural-VcrRadSol">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrRadSol">No. RADICADO SOLICITUD: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrRadSol-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrRadSol-description"><div class="alert alert-info bspacer-xs">Registrar el n&#250;mero de radicado de la solicitud del oficio solicitud que ingreso a trav&#233;s del sistema de informaci&#243;n de gesti&#243;n documental.</div></span>
+						<input maxlength="20" type="text" class="form-control" name="VcrRadSol" id="VcrRadSol" value="<%%VALUE(VcrRadSol)%%>">
+					</div>
+				</div>
+
+				<!-- Field: FECHA RADICACION: -->
+				<div class="form-group natural-VcrFecSol">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrFecSol-dd">FECHA RADICACION: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrFecSol-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrFecSol-description"><div class="alert alert-info bspacer-xs">Registrar la fecha de radicado del oficio solicitud que ingreso a trav&#233;s del sistema de informaci&#243;n de gesti&#243;n documental.</div></span>
+						<%%COMBO(VcrFecSol)%%>
+					</div>
+				</div>
+
+				<!-- Field: OBSERVACIONES DATOS: -->
+				<div class="form-group natural-VcrObsDat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrObsDat">OBSERVACIONES DATOS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrObsDat-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrObsDat-description"><div class="alert alert-info bspacer-xs">Registrar las observaciones que hayan relacionados con los datos de la visita de verificaci&#243;n</div></span>
+						<textarea class="form-control" name="VcrObsDat" id="VcrObsDat" rows=" 5"><%%VALUE(VcrObsDat)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: UBICACION: -->
+				<div class="form-group natural-VcrIdUbi">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdUbi" data-parent_link="view_parent_modal">UBICACION:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdUbi-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdUbi-description"><div class="alert alert-info bspacer-xs">Seleccionar la zona de la visita</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdUbi)%%><%%PLINK(VcrIdUbi)%%><%%ADDNEW(ubicacion)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: DIRECCION: -->
+				<div class="form-group natural-VcrDir">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrDir">DIRECCION:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDir-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDir-description"><div class="alert alert-info bspacer-xs">Registrar la direcci&#243;n donde se est&#225; realizando la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico. </div></span>
+						<input maxlength="40" type="text" class="form-control" name="VcrDir" id="VcrDir" value="<%%VALUE(VcrDir)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: BARRIO: -->
+				<div class="form-group natural-VcrIdBarVe">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdBarVe" data-parent_link="view_parent_modal">BARRIO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdBarVe-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdBarVe-description"><div class="alert alert-info bspacer-xs">Seleccionar el barrio en el cual se esta realizando la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdBarVe)%%><%%PLINK(VcrIdBarVe)%%><%%ADDNEW(barrios)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: VEREDA/CORREGIMIENTO: -->
+				<div class="form-group natural-VcrIdCorr">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdCorr" data-parent_link="view_parent_modal">VEREDA/CORREGIMIENTO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdCorr-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdCorr-description"><div class="alert alert-info bspacer-xs">Seleccionar la vereda o corregimiento teniendo en cuenta la ubicaci&#243;n de la direcci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdCorr)%%><%%PLINK(VcrIdCorr)%%><%%ADDNEW(corregimientos)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: COMUNA/LOCALIDAD: -->
+				<div class="form-group natural-VcrIdCom">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdCom" data-parent_link="view_parent_modal">COMUNA/LOCALIDAD: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdCom-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdCom-description"><div class="alert alert-info bspacer-xs">Seleccionar la comuna en donde est&#225; ubicado el barrio.</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdCom)%%><%%PLINK(VcrIdCom)%%><%%ADDNEW(comunas)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: LATITUD: -->
+				<div class="form-group natural-VcrLat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrLat">LATITUD:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrLat-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrLat-description"><div class="alert alert-info bspacer-xs">Registrar las coordenadas - latitud lo m&#225;s exacto posible en grados decimales del lugar donde sucedi&#243; la emergencia.   <br></div></span>
+						<input maxlength="16" type="text" class="form-control" name="VcrLat" id="VcrLat" value="<%%VALUE(VcrLat)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: LONGITUD: -->
+				<div class="form-group natural-VcrLon">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrLon">LONGITUD:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrLon-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrLon-description"><div class="alert alert-info bspacer-xs">Registrar coordenadas - longitud lo m&#225;s exacto posible en grados decimales donde sucedi&#243; la emergencia.   . Ejemplo:w (longitud) <br>&#8211; 76. (registrar la cantidad de n&#250;meros que apliquen)</div></span>
+						<input maxlength="16" type="text" class="form-control" name="VcrLon" id="VcrLon" value="<%%VALUE(VcrLon)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: OBSERVACIONES UBICACION: -->
+				<div class="form-group natural-VcrObsUbi">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrObsUbi">OBSERVACIONES UBICACION: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrObsUbi-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrObsUbi-description"><div class="alert alert-info bspacer-xs">Registrar las observaciones relacionadas con la ubicaci&#243;n  del lugar donde se realiza la visita de verificaci&#243;n.</div></span>
+						<textarea class="form-control" name="VcrObsUbi" id="VcrObsUbi" rows=" 5"><%%VALUE(VcrObsUbi)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: TIPO DE FEN&#211;MENO: -->
+				<div class="form-group natural-VcrIdFen">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdFen" data-parent_link="view_parent_modal">TIPO DE FEN&#211;MENO:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdFen-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdFen-description"><div class="alert alert-info bspacer-xs">Seleccionar el tipo de fenomeno registrado asociado con la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdFen)%%><%%PLINK(VcrIdFen)%%><%%ADDNEW(fenomenos)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: DETONANTE -->
+				<div class="form-group natural-VcrDet">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrDet">DETONANTE <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDet-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDet-description"><div class="alert alert-info bspacer-xs">Registrar el detonante  (En  caso que no aplique colocar N/A)</div></span>
+						<textarea class="form-control" name="VcrDet" id="VcrDet" rows=" 5"><%%VALUE(VcrDet)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: CARACTER&#205;STICAS DEL EVENTO: -->
+				<div class="form-group natural-VcrIdCar">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdCar" data-parent_link="view_parent_modal">CARACTER&#205;STICAS DEL EVENTO:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdCar-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdCar-description"><div class="alert alert-info bspacer-xs">Seleccionar la caracter&#237;sticas del evento</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdCar)%%><%%PLINK(VcrIdCar)%%><%%ADDNEW(caracteristicas_evento)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: OTRAS CARACTERISTICAS DEL EVENTO: -->
+				<div class="form-group natural-VcrOtr">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrOtr">OTRAS CARACTERISTICAS DEL EVENTO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrOtr-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrOtr-description"><div class="alert alert-info bspacer-xs">Registrar si existen otras caracteristicas del evento asociadas a la visita de verificaci&#243;n</div></span>
+						<input maxlength="40" type="text" class="form-control" name="VcrOtr" id="VcrOtr" value="<%%VALUE(VcrOtr)%%>">
+					</div>
+				</div>
+
+				<!-- Field: DESCRIPCI&#211;N EVENTO: -->
+				<div class="form-group natural-VcrDesEve">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrDesEve">DESCRIPCI&#211;N EVENTO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDesEve-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDesEve-description"><div class="alert alert-info bspacer-xs">Registrar una descripci&#243;n resumida del evento relacionado con la visita de verificaci&#243;n</div></span>
+						<textarea class="form-control" name="VcrDesEve" id="VcrDesEve" rows=" 5"><%%VALUE(VcrDesEve)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: TIPO DE EDIFICACI&#211;N: -->
+				<div class="form-group natural-VcrIdEdi">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdEdi" data-parent_link="view_parent_modal">TIPO DE EDIFICACI&#211;N: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdEdi-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdEdi-description"><div class="alert alert-info bspacer-xs">Seleccionar el tipo de edificaci&#243;n asociado con la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdEdi)%%><%%PLINK(VcrIdEdi)%%><%%ADDNEW(edificacion)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: N&#218;MERO DE PISOS: -->
+				<div class="form-group natural-VcrNoPis">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrNoPis">N&#218;MERO DE PISOS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrNoPis-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrNoPis-description"><div class="alert alert-info bspacer-xs">Digite el n&#250;mero de pisos de la edificaci&#243;n asociada con la visita de verificaci&#243;n.</div></span>
+						<input maxlength="2" type="text" class="form-control" name="VcrNoPis" id="VcrNoPis" value="<%%VALUE(VcrNoPis)%%>">
+					</div>
+				</div>
+
+				<!-- Field: OBRA CIVIL: -->
+				<div class="form-group natural-VcrObrCiv">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrObrCiv">OBRA CIVIL: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrObrCiv-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrObrCiv-description"><div class="alert alert-info bspacer-xs">Registrar el estado de la  obra civil de la edificaci&#243;n asociada con la visita de verificaci&#243;n.</div></span>
+						<input maxlength="20" type="text" class="form-control" name="VcrObrCiv" id="VcrObrCiv" value="<%%VALUE(VcrObrCiv)%%>">
+					</div>
+				</div>
+
+				<!-- Field: ESTADO VISUAL: -->
+				<div class="form-group natural-VcrEstEdi">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrEstEdi">ESTADO VISUAL: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrEstEdi-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrEstEdi-description"><div class="alert alert-info bspacer-xs">Seleccione de acuerdo al estado en que se encuentra la edificaci&#243;n y obra civil asociadas con la visita de verificaci&#243;n.</div></span>
+						<%%COMBO(VcrEstEdi)%%>
+					</div>
+				</div>
+
+				<!-- Field: AFECTACI&#211;N: -->
+				<div class="form-group natural-VcrIdAfe">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdAfe" data-parent_link="view_parent_modal">AFECTACI&#211;N: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdAfe-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdAfe-description"><div class="alert alert-info bspacer-xs">Seleccione el tipo de afectaci&#243;n de la edificaci&#243;n asociada a la visita de verificaci&#243;n.</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdAfe)%%><%%PLINK(VcrIdAfe)%%><%%ADDNEW(afectacion)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: OBSERVACIONES AFECTACION: -->
+				<div class="form-group natural-VcrObsEst">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrObsEst">OBSERVACIONES AFECTACION: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrObsEst-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrObsEst-description"><div class="alert alert-info bspacer-xs">Registre las observaciones que tenga sobre la afectaci&#243;n de la edificaci&#243;n</div></span>
+						<textarea class="form-control" name="VcrObsEst" id="VcrObsEst" rows=" 5"><%%VALUE(VcrObsEst)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: DA&#209;OS GRAVES: -->
+				<div class="form-group natural-VcrDanGrav">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrDanGrav">DA&#209;OS GRAVES: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDanGrav-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDanGrav-description"><div class="alert alert-info bspacer-xs">Seleccione si hay posibilidad de da&#241;os graves en la edificaci&#243;n asociada con la visita de verificaci&#243;n</div></span>
+						<%%COMBO(VcrDanGrav)%%>
+					</div>
+				</div>
+
+				<!-- Field: A&#209;OS DE CONSTRUCCION: -->
+				<div class="form-group natural-VcrAnoCon">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAnoCon">A&#209;OS DE CONSTRUCCION: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAnoCon-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAnoCon-description"><div class="alert alert-info bspacer-xs">Registrar el numero de a&#241;os aproximado de construcci&#243;n de la  edificaci&#243;n asociada con la visita de verificaci&#243;n</div></span>
+						<input maxlength="5" type="text" class="form-control" name="VcrAnoCon" id="VcrAnoCon" value="<%%VALUE(VcrAnoCon)%%>">
+					</div>
+				</div>
+
+				<!-- Field: TIPO DE MATERIAL: -->
+				<div class="form-group natural-VcrIdMat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdMat" data-parent_link="view_parent_modal">TIPO DE MATERIAL: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdMat-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdMat-description"><div class="alert alert-info bspacer-xs">Registrar el tipo de material de la  edificaci&#243;n asociada con la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdMat)%%><%%PLINK(VcrIdMat)%%><%%ADDNEW(tipo_material)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: LESIONES EN LA ESTRUCTURA: -->
+				<div class="form-group natural-VcrIdLes">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdLes" data-parent_link="view_parent_modal">LESIONES EN LA ESTRUCTURA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdLes-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdLes-description"><div class="alert alert-info bspacer-xs">Seleccionar  el tipo de lesi&#243;n en la estructura de la  edificaci&#243;n asociada con la visita de verificaci&#243;n</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdLes)%%><%%PLINK(VcrIdLes)%%><%%ADDNEW(lesiones)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: AYUDA HUMANITARIA: -->
+				<div class="form-group natural-VcrAyuHum">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAyuHum">AYUDA HUMANITARIA:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAyuHum-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAyuHum-description"><div class="alert alert-info bspacer-xs">Registre si requiere realizar entrega de ayuda humanitaria</div></span>
+						<%%COMBO(VcrAyuHum)%%>
+					</div>
+				</div>
+
+				<!-- Field: CONSECUTIVO AYUDA: -->
+				<div class="form-group natural-VcrConAyu">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrConAyu">CONSECUTIVO AYUDA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrConAyu-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrConAyu-description"><div class="alert alert-info bspacer-xs">Ingrese el n&#250;mero de consecutivo asignado en el formato de registro de entrega de ayuda humanitaria</div></span>
+						<input maxlength="20" type="text" class="form-control" name="VcrConAyu" id="VcrConAyu" value="<%%VALUE(VcrConAyu)%%>">
+					</div>
+				</div>
+
+				<!-- Field: OBSERVACIONES AYUDA -->
+				<div class="form-group natural-VcrObs">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrObs">OBSERVACIONES AYUDA <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrObs-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrObs-description"><div class="alert alert-info bspacer-xs">Registrar las observaciones relacionadas con la ayuda humanitaria entregada en la visita de verificaci&#243;n</div></span>
+						<textarea class="form-control" name="VcrObs" id="VcrObs" rows=" 5"><%%VALUE(VcrObs)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: CAPACIDAD REDUCIDA: -->
+				<div class="form-group natural-VcrCapRed">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrCapRed">CAPACIDAD REDUCIDA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrCapRed-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrCapRed-description"><div class="alert alert-info bspacer-xs">Registrar si existen personas con capacidad reducida </div></span>
+						<%%COMBO(VcrCapRed)%%>
+					</div>
+				</div>
+
+				<!-- Field: TIPO CAPACIDAD REDUCIDA: -->
+				<div class="form-group natural-VcrIdCap">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdCap" data-parent_link="view_parent_modal">TIPO CAPACIDAD REDUCIDA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdCap-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdCap-description"><div class="alert alert-info bspacer-xs">Seleccionar el tipo de capacidad reducida que se presenta</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdCap)%%><%%PLINK(VcrIdCap)%%><%%ADDNEW(capacidad_reducida)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: OTRA CAPACIDAD REDUCIDA: -->
+				<div class="form-group natural-VcrOtrCap">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrOtrCap">OTRA CAPACIDAD REDUCIDA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrOtrCap-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrOtrCap-description"><div class="alert alert-info bspacer-xs">Registrar si existe otro tipo de capacidad reducida diferente a la que se encuentra en el listado</div></span>
+						<textarea class="form-control" name="VcrOtrCap" id="VcrOtrCap" rows=" 5"><%%VALUE(VcrOtrCap)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL PRIMERA INFANCIA - FEMENINO: -->
+				<div class="form-group natural-VcrInf0a5F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrInf0a5F">CICLO VITAL PRIMERA INFANCIA - FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrInf0a5F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrInf0a5F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de primera infancia (cantidad de 0-5 a&#241;os de edad) genero femenino asociadas con la visita de verificaci&#237;n</div></span>
+						<input type="text" class="form-control" name="VcrInf0a5F" id="VcrInf0a5F" value="<%%VALUE(VcrInf0a5F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL PRIMERA INFANCIA MASCULINO: -->
+				<div class="form-group natural-VcrInf0a5M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrInf0a5M">CICLO VITAL PRIMERA INFANCIA MASCULINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrInf0a5M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrInf0a5M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de primera infancia (cantidad de 0-5 a&#241;os de edad) genero masculino asociadas con la visita de verificaci&#243;n</div></span>
+						<input type="text" class="form-control" name="VcrInf0a5M" id="VcrInf0a5M" value="<%%VALUE(VcrInf0a5M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL NI&#209;AS FEMENINO: -->
+				<div class="form-group natural-VcrInf5a12F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrInf5a12F">CICLO VITAL NI&#209;AS FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrInf5a12F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrInf5a12F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de ni&#241;os (cantidad de 5-12 a&#241;os de edad) genero Femenino asociados con la visita de verificaci&#243;n</div></span>
+						<input type="text" class="form-control" name="VcrInf5a12F" id="VcrInf5a12F" value="<%%VALUE(VcrInf5a12F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL NI&#209;OS: -->
+				<div class="form-group natural-VcrInf5a12M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrInf5a12M">CICLO VITAL NI&#209;OS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrInf5a12M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrInf5a12M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de ni&#241;os ( 5-12 a&#241;os de edad) genero  Masculino asociados con la visita de verificaci&#243;n</div></span>
+						<input type="text" class="form-control" name="VcrInf5a12M" id="VcrInf5a12M" value="<%%VALUE(VcrInf5a12M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADOLESCENTES FEMENINO: -->
+				<div class="form-group natural-VcrAd12a18F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd12a18F">CICLO VITAL ADOLESCENTES FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd12a18F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd12a18F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adolescentes (12-18 a&#241;os de edad) genero  Femenino asociados con  la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAd12a18F" id="VcrAd12a18F" value="<%%VALUE(VcrAd12a18F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADOLESCENTES MASCULINO: -->
+				<div class="form-group natural-VcrAd12a18M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd12a18M">CICLO VITAL ADOLESCENTES MASCULINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd12a18M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd12a18M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adolescentes (12-18 a&#241;os de edad) genero  masculino asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAd12a18M" id="VcrAd12a18M" value="<%%VALUE(VcrAd12a18M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL JOVEN ADULTO FEMENINO: -->
+				<div class="form-group natural-VcrAd18a28F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd18a28F">CICLO VITAL JOVEN ADULTO FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd18a28F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd18a28F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de joven adulto (18-28 a&#241;os de edad) genero femenino asociado con la visita de verificaci&#243;n</div></span>
+						<input type="text" class="form-control" name="VcrAd18a28F" id="VcrAd18a28F" value="<%%VALUE(VcrAd18a28F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL JOVEN ADULTO MASCULINO: -->
+				<div class="form-group natural-VcrAd18a28M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd18a28M">CICLO VITAL JOVEN ADULTO MASCULINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd18a28M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd18a28M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de joven adulto (18-28 a&#241;os de edad) genero masculino asociado con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAd18a28M" id="VcrAd18a28M" value="<%%VALUE(VcrAd18a28M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADULTO FEMENINO: -->
+				<div class="form-group natural-VcrAd28a60F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd28a60F">CICLO VITAL ADULTO FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd28a60F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd28a60F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adulto (cantidad de 28-60 a&#241;os de edad) genero femenino asociado con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAd28a60F" id="VcrAd28a60F" value="<%%VALUE(VcrAd28a60F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADULTO MASCULINO: -->
+				<div class="form-group natural-VcrAd28a60M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAd28a60M">CICLO VITAL ADULTO MASCULINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAd28a60M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAd28a60M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adulto (cantidad de 28-60 a&#241;os de edad) genero masculino asociado con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAd28a60M" id="VcrAd28a60M" value="<%%VALUE(VcrAd28a60M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADULTO MAYOR FEMENINO: -->
+				<div class="form-group natural-VcrAdMay60F">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAdMay60F">CICLO VITAL ADULTO MAYOR FEMENINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAdMay60F-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAdMay60F-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adulto mayor (cantidad de mas de 60 a&#241;os de edad) genero femenino asociado con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAdMay60F" id="VcrAdMay60F" value="<%%VALUE(VcrAdMay60F)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CICLO VITAL ADULTO MAYOR MASCULINO: -->
+				<div class="form-group natural-VcrAdMay60M">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAdMay60M">CICLO VITAL ADULTO MAYOR MASCULINO: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAdMay60M-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAdMay60M-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas de adulto mayor (cantidad de mas de 60 a&#241;os de edad) genero masculino asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAdMay60M" id="VcrAdMay60M" value="<%%VALUE(VcrAdMay60M)%%>">
+					</div>
+				</div>
+
+				<!-- Field: AFROCOLOMBIANAS: -->
+				<div class="form-group natural-VcrAfr">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAfr">AFROCOLOMBIANAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAfr-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAfr-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas afrocolombianas asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrAfr" id="VcrAfr" value="<%%VALUE(VcrAfr)%%>">
+					</div>
+				</div>
+
+				<!-- Field: PALENQUERAS: -->
+				<div class="form-group natural-VcrPal">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrPal">PALENQUERAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrPal-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrPal-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas palenqueras  asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrPal" id="VcrPal" value="<%%VALUE(VcrPal)%%>">
+					</div>
+				</div>
+
+				<!-- Field: IND&#205;GENAS: -->
+				<div class="form-group natural-VcrInd">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrInd">IND&#205;GENAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrInd-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrInd-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas indigenas asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrInd" id="VcrInd" value="<%%VALUE(VcrInd)%%>">
+					</div>
+				</div>
+
+				<!-- Field: CAUCACICAS: -->
+				<div class="form-group natural-VcrCau">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrCau">CAUCACICAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrCau-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrCau-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas caucacicas asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrCau" id="VcrCau" value="<%%VALUE(VcrCau)%%>">
+					</div>
+				</div>
+
+				<!-- Field: GITANAS: -->
+				<div class="form-group natural-VcrGit">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrGit">GITANAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrGit-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrGit-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas gitanas asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrGit" id="VcrGit" value="<%%VALUE(VcrGit)%%>">
+					</div>
+				</div>
+
+				<!-- Field: MESTIZAS: -->
+				<div class="form-group natural-VcrMes">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrMes">MESTIZAS: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrMes-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrMes-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas mestizas asociados con la visita de verificaci&#243;n.</div></span>
+						<input type="text" class="form-control" name="VcrMes" id="VcrMes" value="<%%VALUE(VcrMes)%%>">
+					</div>
+				</div>
+
+				<!-- Field: OTROS PERTENENCIA ETNICA: -->
+				<div class="form-group natural-VcrOtrPer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrOtrPer">OTROS PERTENENCIA ETNICA: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrOtrPer-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrOtrPer-description"><div class="alert alert-info bspacer-xs">Registrar el numero de personas con otra pertenencia etnica y cual es.</div></span>
+						<textarea class="form-control" name="VcrOtrPer" id="VcrOtrPer" rows=" 2"><%%VALUE(VcrOtrPer)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: PERTENENCIA ETNICA NS/NR: -->
+				<div class="form-group natural-VcrPerNsNr">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrPerNsNr">PERTENENCIA ETNICA NS/NR: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrPerNsNr-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrPerNsNr-description"><div class="alert alert-info bspacer-xs">Ingresar si no sabe o no responde si existe pertenencia etnica</div></span>
+						<%%COMBO(VcrPerNsNr)%%>
+					</div>
+				</div>
+
+				<!-- Field: TRASLADO CASO: -->
+				<div class="form-group natural-VcrTraCas">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrTraCas">TRASLADO CASO:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrTraCas-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrTraCas-description"><div class="alert alert-info bspacer-xs">Registrar si se requiere realizar traslado del caso a otras dependencias</div></span>
+						<%%COMBO(VcrTraCas)%%>
+					</div>
+				</div>
+
+				<!-- Field: ORGANISMO O ENTIDAD 1: -->
+				<div class="form-group natural-VcrIdTra1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdTra1" data-parent_link="view_parent_modal">ORGANISMO O ENTIDAD 1: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdTra1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdTra1-description"><div class="alert alert-info bspacer-xs">Registrar si se requiere intervenci&#243;n de otras dependencias, el organismo o Entidad a la que se traslada el reporte para hacer <br>seguimiento <br></div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdTra1)%%><%%PLINK(VcrIdTra1)%%><%%ADDNEW(dependencias)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: ORGANISMO O ENTIDAD 2: -->
+				<div class="form-group natural-VcrdTra2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrdTra2" data-parent_link="view_parent_modal">ORGANISMO O ENTIDAD 2: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrdTra2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrdTra2-description"><div class="alert alert-info bspacer-xs">Registrar si se requiere intervenci&#243;n de otras dependencias, el organismo o Entidad a la que se traslada el reporte para hacer <br>seguimiento <br></div></span>
+						<div class="lookup-flex"><%%COMBO(VcrdTra2)%%><%%PLINK(VcrdTra2)%%><%%ADDNEW(dependencias)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: ORGANISMO O ENTIDAD 3: -->
+				<div class="form-group natural-VcrIdTra3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdTra3" data-parent_link="view_parent_modal">ORGANISMO O ENTIDAD 3: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdTra3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdTra3-description"><div class="alert alert-info bspacer-xs">Registrar si se requiere intervenci&#243;n de otras dependencias, el organismo o Entidad a la que se traslada el reporte para hacer <br>seguimiento <br></div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdTra3)%%><%%PLINK(VcrIdTra3)%%><%%ADDNEW(dependencias)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: ORGANISMO O ENTIDAD 4: -->
+				<div class="form-group natural-VcrIdTra4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdTra4" data-parent_link="view_parent_modal">ORGANISMO O ENTIDAD 4: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdTra4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdTra4-description"><div class="alert alert-info bspacer-xs">Registrar si se requiere intervenci&#243;n de otras dependencias, el organismo o Entidad a la que se traslada el reporte para hacer <br>seguimiento <br></div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdTra4)%%><%%PLINK(VcrIdTra4)%%><%%ADDNEW(dependencias)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: RECOMENDACION LINEA EMERGENCIA: -->
+				<div class="form-group natural-VcrRecLin">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrRecLin">RECOMENDACION LINEA EMERGENCIA:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrRecLin-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrRecLin-description"><div class="alert alert-info bspacer-xs">Recuerde las l&#237;neas de emergencia: Bomberos- 119, Cruz Roja- 132, Defensa Civil- 144 y Gases de Occidente- 164</div></span>
+						<%%COMBO(VcrRecLin)%%>
+					</div>
+				</div>
+
+				<!-- Field: RECOMENDACION LEY 1523: -->
+				<div class="form-group natural-VcrRecLey">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrRecLey">RECOMENDACION LEY 1523:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrRecLey-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrRecLey-description"><div class="alert alert-info bspacer-xs">La ley 1523 del 24 de abril de 2012, "Por la cual se adopta la pol&#237;tica nacional de gesti&#243;n del riesgo de desastres y se establece el sistema nacional de gesti&#243;n del riesgo de <br>desastres y se dictan otras disposiciones en su art&#237;culo 2&#176; de la responsabilidad". </div></span>
+						<%%COMBO(VcrRecLey)%%>
+					</div>
+				</div>
+
+				<!-- Field: RECOMENDACION PRINCIPIO PRECAUCION: -->
+				<div class="form-group natural-VcrRecPre">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrRecPre">RECOMENDACION PRINCIPIO PRECAUCION:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrRecPre-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrRecPre-description"><div class="alert alert-info bspacer-xs">Amparados en la ley 1523 de 2012 art&#237;culo 3&#176;, Principio de precauci&#243;n, es nuestro deber legal informarle que cuando exista la posibilidad de da&#241;os graves o irreversibles a las <br>vidas y/o a los bienes materiales, se debe evacuar de manera preventiva.</div></span>
+						<%%COMBO(VcrRecPre)%%>
+					</div>
+				</div>
+
+				<!-- Field: RECOMENDACIONES PRINCIPIO AUTOCONSERVACION: -->
+				<div class="form-group natural-VcrRecAut">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrRecAut">RECOMENDACIONES PRINCIPIO AUTOCONSERVACION:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrRecAut-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrRecAut-description"><div class="alert alert-info bspacer-xs">Amparado en la ley 1523 de 2012 art&#237;culo 3&#176;, Principio de autoconservaci&#243;n, es nuestro deber legal solicitarle que de forma inmediata evacue su vivienda, con el fin de conservar <br>su vida y la de su familia.</div></span>
+						<%%COMBO(VcrRecAut)%%>
+					</div>
+				</div>
+
+				<!-- Field: DATOS PERSONALES: -->
+				<div class="form-group natural-VcrDatPer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrDatPer">DATOS PERSONALES:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDatPer-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDatPer-description"><div class="alert alert-info bspacer-xs">Autorizo ingresar mis datos personales en la base de datos de la Secretar&#237;a de Gesti&#243;n del Riesgo de Emergencias y Desastres Distrito Especial de Cali - (Ley 1581 de 2012 "Por <br>la cual se dicta disposiciones generales para la protecci&#243;n de datos personales)<br></div></span>
+						<%%COMBO(VcrDatPer)%%>
+					</div>
+				</div>
+
+				<!-- Field: USO DE IMAGENES: -->
+				<div class="form-group natural-VcrUsoIma">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrUsoIma">USO DE IMAGENES:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrUsoIma-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrUsoIma-description"><div class="alert alert-info bspacer-xs">Autorizo el uso de imagen(es) que se otorga en el marco establecido en las leyes 23 de 1982, 44 de 1993, 1581 de 2012 (Ley de Protecci&#243;n de Datos Personales) y 1915 de 2018 y <br>el Decreto Nacional 1074 de 2015, y por termino durante el cual la Secretar&#237;a de Gesti&#243;n del Riesgo de Emergencias y Desastres sea titular de los derechos sobre el material <br>audiovisual referido.<br></div></span>
+						<%%COMBO(VcrUsoIma)%%>
+					</div>
+				</div>
+
+				<!-- Field: USO DATOS PERSONALES: -->
+				<div class="form-group natural-VcrUsoDat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrUsoDat">USO DATOS PERSONALES:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrUsoDat-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrUsoDat-description"><div class="alert alert-info bspacer-xs">He sido informado(a) previamente respecto del uso que se le dar&#225; a mis datos personales y su finalidad. </div></span>
+						<%%COMBO(VcrUsoDat)%%>
+					</div>
+				</div>
+
+				<!-- Field: AUTORIZACION CORREO ELECTR&#211;NICO: -->
+				<div class="form-group natural-VcrAutCor">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrAutCor">AUTORIZACION CORREO ELECTR&#211;NICO:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrAutCor-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrAutCor-description"><div class="alert alert-info bspacer-xs">A trav&#233;s de este formato autorizo para que sean enviados v&#237;a correo electr&#243;nico la informaci&#243;n y datos que resulten de est&#225; visita </div></span>
+						<%%COMBO(VcrAutCor)%%>
+					</div>
+				</div>
+
+				<!-- Field: FUNCIONARIO / CONTRATISTA: -->
+				<div class="form-group natural-VcrIdSerP">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="VcrIdSerP" data-parent_link="view_parent_modal">FUNCIONARIO / CONTRATISTA:<span class="text-danger"><%%TRANSLATION(*)%%></span> <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIdSerP-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIdSerP-description"><div class="alert alert-info bspacer-xs"> informaci&#243;n de la persona (funcionario/contratista), que se<br>desplaza al sitio y realiza la visita de de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y<br>tecnol&#243;gico.</div></span>
+						<div class="lookup-flex"><%%COMBO(VcrIdSerP)%%><%%PLINK(VcrIdSerP)%%><%%ADDNEW(servidor_publico)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: FOTO -->
+				<div class="form-group natural-VcrIma">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">FOTO <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrIma-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrIma-description"><div class="alert alert-info bspacer-xs">Ingrese imagen asociada con la visita de verificaci&#243;n, formatos jpg, jpeg, gif, png o webp</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="VcrIma-link" href="link.php?t=natural&f=VcrIma&i=<%%VALUE(VcrId)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-picture" title="<%%VALUE(VcrIma)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(VcrIma)%%>
+								<%%REMOVEFILE(VcrIma)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_VcrIma = '<%%VALUE(VcrIma)%%>'; if(e_VcrIma == '' || e_VcrIma == '&nbsp;' || e_VcrIma == 'blank.gif') jQuery('#VcrIma-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: VIDEO -->
+				<div class="form-group natural-VcrVideo">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">VIDEO <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrVideo-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrVideo-description"><div class="alert alert-info bspacer-xs">Adjunte video de la visita de verificaci&#243;n </div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="VcrVideo-link" href="link.php?t=natural&f=VcrVideo&i=<%%VALUE(VcrId)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-film" title="<%%VALUE(VcrVideo)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(VcrVideo)%%>
+								<%%REMOVEFILE(VcrVideo)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_VcrVideo = '<%%VALUE(VcrVideo)%%>'; if(e_VcrVideo == '' || e_VcrVideo == '&nbsp;' || e_VcrVideo == 'blank.gif') jQuery('#VcrVideo-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: DOCUMENTO -->
+				<div class="form-group natural-VcrDoc">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">DOCUMENTO <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#VcrDoc-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="VcrDoc-description"><div class="alert alert-info bspacer-xs">Adjunte documento asociado con la visita de verificaci&#243;n en formato pdf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="VcrDoc-link" href="link.php?t=natural&f=VcrDoc&i=<%%VALUE(VcrId)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(VcrDoc)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(VcrDoc)%%>
+								<%%REMOVEFILE(VcrDoc)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_VcrDoc = '<%%VALUE(VcrDoc)%%>'; if(e_VcrDoc == '' || e_VcrDoc == '&nbsp;' || e_VcrDoc == 'blank.gif') jQuery('#VcrDoc-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="natural_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.natural-VcrIdSol')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#natural_dv_container-loading').addClass('hidden');
+						$j('#natural_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('natural', 'VcrIdSol');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#natural_dv_container-loading').addClass('hidden');
+				$j('#natural_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'natural',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=natural&id=<%%URLVALUE(VcrId)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=natural&id=<%%URLVALUE(VcrId)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>
