@@ -26,6 +26,7 @@ function natural_insert(&$error_message = '') {
 		'VcrObsDat' => br2nl(Request::val('VcrObsDat', '')),
 		'VcrIdUbi' => Request::lookup('VcrIdUbi', ''),
 		'VcrDir' => Request::val('VcrDir', ''),
+		'VcrDirNom' => Request::val('VcrDirNom', ''),
 		'VcrIdBarVe' => Request::lookup('VcrIdBarVe', ''),
 		'VcrIdCorr' => Request::lookup('VcrIdCorr', ''),
 		'VcrIdCom' => Request::lookup('VcrIdCom', ''),
@@ -371,6 +372,7 @@ function natural_update(&$selected_id, &$error_message = '') {
 		'VcrObsDat' => br2nl(Request::val('VcrObsDat', '')),
 		'VcrIdUbi' => Request::lookup('VcrIdUbi', ''),
 		'VcrDir' => Request::val('VcrDir', ''),
+		'VcrDirNom' => Request::val('VcrDirNom', ''),
 		'VcrIdBarVe' => Request::lookup('VcrIdBarVe', ''),
 		'VcrIdCorr' => Request::lookup('VcrIdCorr', ''),
 		'VcrIdCom' => Request::lookup('VcrIdCom', ''),
@@ -1060,28 +1062,28 @@ function natural_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1, $Al
 		$combo_VcrIdFen->SelectedData = $filterer_VcrIdFen;
 		$combo_VcrIdCar->SelectedData = $filterer_VcrIdCar;
 		$combo_VcrIdEdi->SelectedData = $filterer_VcrIdEdi;
-		$combo_VcrEstEdi->SelectedText = (isset($filterField[1]) && $filterField[1] == '30' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrEstEdi->SelectedText = (isset($filterField[1]) && $filterField[1] == '31' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
 		$combo_VcrIdAfe->SelectedData = $filterer_VcrIdAfe;
-		$combo_VcrDanGrav->SelectedText = (isset($filterField[1]) && $filterField[1] == '33' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrDanGrav->SelectedText = (isset($filterField[1]) && $filterField[1] == '34' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
 		$combo_VcrIdMat->SelectedData = $filterer_VcrIdMat;
 		$combo_VcrIdLes->SelectedData = $filterer_VcrIdLes;
-		$combo_VcrAyuHum->SelectedText = (isset($filterField[1]) && $filterField[1] == '37' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrCapRed->SelectedText = (isset($filterField[1]) && $filterField[1] == '40' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrAyuHum->SelectedText = (isset($filterField[1]) && $filterField[1] == '38' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrCapRed->SelectedText = (isset($filterField[1]) && $filterField[1] == '41' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
 		$combo_VcrIdCap->SelectedData = $filterer_VcrIdCap;
-		$combo_VcrPerNsNr->SelectedText = (isset($filterField[1]) && $filterField[1] == '62' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrTraCas->SelectedText = (isset($filterField[1]) && $filterField[1] == '63' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrPerNsNr->SelectedText = (isset($filterField[1]) && $filterField[1] == '63' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrTraCas->SelectedText = (isset($filterField[1]) && $filterField[1] == '64' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
 		$combo_VcrIdTra1->SelectedData = $filterer_VcrIdTra1;
 		$combo_VcrdTra2->SelectedData = $filterer_VcrdTra2;
 		$combo_VcrIdTra3->SelectedData = $filterer_VcrIdTra3;
 		$combo_VcrIdTra4->SelectedData = $filterer_VcrIdTra4;
-		$combo_VcrRecLin->SelectedText = (isset($filterField[1]) && $filterField[1] == '68' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrRecLey->SelectedText = (isset($filterField[1]) && $filterField[1] == '69' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrRecPre->SelectedText = (isset($filterField[1]) && $filterField[1] == '70' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrRecAut->SelectedText = (isset($filterField[1]) && $filterField[1] == '71' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrDatPer->SelectedText = (isset($filterField[1]) && $filterField[1] == '72' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrUsoIma->SelectedText = (isset($filterField[1]) && $filterField[1] == '73' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrUsoDat->SelectedText = (isset($filterField[1]) && $filterField[1] == '74' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
-		$combo_VcrAutCor->SelectedText = (isset($filterField[1]) && $filterField[1] == '75' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrRecLin->SelectedText = (isset($filterField[1]) && $filterField[1] == '69' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrRecLey->SelectedText = (isset($filterField[1]) && $filterField[1] == '70' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrRecPre->SelectedText = (isset($filterField[1]) && $filterField[1] == '71' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrRecAut->SelectedText = (isset($filterField[1]) && $filterField[1] == '72' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrDatPer->SelectedText = (isset($filterField[1]) && $filterField[1] == '73' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrUsoIma->SelectedText = (isset($filterField[1]) && $filterField[1] == '74' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrUsoDat->SelectedText = (isset($filterField[1]) && $filterField[1] == '75' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
+		$combo_VcrAutCor->SelectedText = (isset($filterField[1]) && $filterField[1] == '76' && $filterOperator[1] == '<=>' ? $filterValue[1] : '');
 		$combo_VcrIdSerP->SelectedData = $filterer_VcrIdSerP;
 	}
 	$combo_VcrIdSol->HTML = '<span id="VcrIdSol-container' . $rnd1 . '"></span><input type="hidden" name="VcrIdSol" id="VcrIdSol' . $rnd1 . '" value="' . html_attr($combo_VcrIdSol->SelectedData) . '">';
@@ -2745,6 +2747,7 @@ function natural_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1, $Al
 		$jsReadOnly .= "\tjQuery('#VcrIdUbi').prop('disabled', true).css({ color: '#555', backgroundColor: '#fff' });\n";
 		$jsReadOnly .= "\tjQuery('#VcrIdUbi_caption').prop('disabled', true).css({ color: '#555', backgroundColor: 'white' });\n";
 		$jsReadOnly .= "\tjQuery('#VcrDir').replaceWith('<div class=\"form-control-static\" id=\"VcrDir\">' + (jQuery('#VcrDir').val() || '') + '</div>');\n";
+		$jsReadOnly .= "\tjQuery('#VcrDirNom').replaceWith('<div class=\"form-control-static\" id=\"VcrDirNom\">' + (jQuery('#VcrDirNom').val() || '') + '</div>');\n";
 		$jsReadOnly .= "\tjQuery('#VcrIdBarVe').prop('disabled', true).css({ color: '#555', backgroundColor: '#fff' });\n";
 		$jsReadOnly .= "\tjQuery('#VcrIdBarVe_caption').prop('disabled', true).css({ color: '#555', backgroundColor: 'white' });\n";
 		$jsReadOnly .= "\tjQuery('#VcrIdCorr').prop('disabled', true).css({ color: '#555', backgroundColor: '#fff' });\n";
@@ -2968,6 +2971,7 @@ function natural_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1, $Al
 	$templateCode = str_replace('<%%UPLOADFILE(VcrObsDat)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(VcrIdUbi)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(VcrDir)%%>', '', $templateCode);
+	$templateCode = str_replace('<%%UPLOADFILE(VcrDirNom)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(VcrIdBarVe)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(VcrIdCorr)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(VcrIdCom)%%>', '', $templateCode);
@@ -3095,6 +3099,9 @@ function natural_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1, $Al
 		if( $dvprint) $templateCode = str_replace('<%%VALUE(VcrDir)%%>', safe_html($urow['VcrDir']), $templateCode);
 		if(!$dvprint) $templateCode = str_replace('<%%VALUE(VcrDir)%%>', html_attr($row['VcrDir']), $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(VcrDir)%%>', urlencode($urow['VcrDir']), $templateCode);
+		if( $dvprint) $templateCode = str_replace('<%%VALUE(VcrDirNom)%%>', safe_html($urow['VcrDirNom']), $templateCode);
+		if(!$dvprint) $templateCode = str_replace('<%%VALUE(VcrDirNom)%%>', html_attr($row['VcrDirNom']), $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(VcrDirNom)%%>', urlencode($urow['VcrDirNom']), $templateCode);
 		if( $dvprint) $templateCode = str_replace('<%%VALUE(VcrIdBarVe)%%>', safe_html($urow['VcrIdBarVe']), $templateCode);
 		if(!$dvprint) $templateCode = str_replace('<%%VALUE(VcrIdBarVe)%%>', html_attr($row['VcrIdBarVe']), $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(VcrIdBarVe)%%>', urlencode($urow['VcrIdBarVe']), $templateCode);
@@ -3339,6 +3346,8 @@ function natural_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1, $Al
 		$templateCode = str_replace('<%%URLVALUE(VcrIdUbi)%%>', urlencode(''), $templateCode);
 		$templateCode = str_replace('<%%VALUE(VcrDir)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(VcrDir)%%>', urlencode(''), $templateCode);
+		$templateCode = str_replace('<%%VALUE(VcrDirNom)%%>', '', $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(VcrDirNom)%%>', urlencode(''), $templateCode);
 		$templateCode = str_replace('<%%VALUE(VcrIdBarVe)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(VcrIdBarVe)%%>', urlencode(''), $templateCode);
 		$templateCode = str_replace('<%%VALUE(VcrIdCorr)%%>', '', $templateCode);

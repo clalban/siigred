@@ -1208,6 +1208,13 @@
 							'description' => 'Registrar la direcci&#243;n donde se est&#225; realizando la visita de verificaci&#243;n de condiciones de riesgo de origen natural, socio natural y tecnol&#243;gico. ',
 						],
 					],
+					'VcrDirNom' => [
+						'appgini' => "VARCHAR(40) NULL",
+						'info' => [
+							'caption' => 'DIRECCION CON GUIA NOMENCLATURA:',
+							'description' => 'Ingrese la direcci&#243;n teniendo en cuenta la guia de nomenclatura',
+						],
+					],
 					'VcrIdBarVe' => [
 						'appgini' => "VARCHAR(10) NULL",
 						'info' => [

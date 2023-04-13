@@ -28,6 +28,7 @@
 				`VcrObsDat` LONGTEXT NULL,
 				`VcrIdUbi` BIGINT NOT NULL,
 				`VcrDir` VARCHAR(40) NOT NULL,
+				`VcrDirNom` VARCHAR(40) NULL,
 				`VcrIdBarVe` VARCHAR(10) NULL,
 				`VcrIdCorr` VARCHAR(12) NULL,
 				`VcrIdCom` VARCHAR(12) NULL,
@@ -93,7 +94,11 @@
 				`VcrVideo` VARCHAR(40) NULL,
 				`VcrDoc` VARCHAR(40) NULL
 			) CHARSET utf8mb4", [
-				"ALTER TABLE `natural` DROP `VcrNumIde`",
+				"ALTER TABLE natural ADD `field80` VARCHAR(40)",
+				"ALTER TABLE natural ADD `field81` VARCHAR(40)",
+				"ALTER TABLE `natural` CHANGE `field80` `V` VARCHAR(40) NULL ",
+				"ALTER TABLE `natural` DROP `field81`",
+				"ALTER TABLE `natural` CHANGE `V` `VcrDirNom` VARCHAR(40) NULL ",
 			]
 		);
 		setupIndexes('natural', ['VcrIdSol','VcrIdTip','VcrIdMot','VcrIdUbi','VcrIdBarVe','VcrIdCorr','VcrIdCom','VcrIdFen','VcrIdCar','VcrIdEdi','VcrIdAfe','VcrIdMat','VcrIdLes','VcrIdCap','VcrIdTra1','VcrdTra2','VcrIdTra3','VcrIdTra4','VcrIdSerP',]);
